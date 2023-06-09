@@ -65,10 +65,15 @@
         box.position.set(3,0,0); //位置を指定
         scene.add(box);   // シーンに追加
         
+        var geometry = new THREE.BoxGeometry(2, 2, 2);
+        var box = new THREE.Mesh(geometry, warning);
+        box.position.set(-3,0,0); //位置を指定
+        scene.add(box);   // シーンに追加
+        
         //平面の作成
         var geometry = new THREE.PlaneGeometry(1,1,1);
         var plane = new THREE.Mesh(geometry, mat);
-        plane.position.set(0,0,0);
+        plane.position.set(0,0,-5);
         scene.add(plane);
 
         update();
