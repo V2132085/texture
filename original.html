@@ -58,11 +58,11 @@
         warning.map = texture;
 
         //箱を作成
-        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var geometry = new THREE.BoxGeometry(2, 2, 2);
         //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
         //var box = new THREE.Mesh(geometry, material);
         var box = new THREE.Mesh(geometry, warning);
-        box.position.set(5,0,0); //位置を指定
+        box.position.set(3,0,0); //位置を指定
         scene.add(box);   // シーンに追加
         
         //平面の作成
@@ -84,7 +84,7 @@
           box.rotation.y += 0.01;
           
           //平面を動かす
-          plane.position.z += 0.02;
+          plane.position.z += 0.25;
 
         }
       }
