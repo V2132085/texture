@@ -52,14 +52,18 @@
         var texture = textureLoader.load("face.jpg");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
+        
+        var texture = textureLoader.load("kiken.jpeg");
+        var warning = new THREE.MeshPhongMaterial();
+        warning.map = texture;
 
-        // 箱を作成
-        //var geometry = new THREE.BoxGeometry(1, 1, 1);
+        //箱を作成
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
         //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
         //var box = new THREE.Mesh(geometry, material);
-        //var box = new THREE.Mesh(geometry, mat);
-        //box.position.set(0,0,0); //位置を指定
-        //scene.add(box);   // シーンに追加
+        var box = new THREE.Mesh(geometry, warning);
+        box.position.set(5,0,0); //位置を指定
+        scene.add(box);   // シーンに追加
         
         //平面の作成
         var geometry = new THREE.PlaneGeometry(1,1,1);
@@ -76,8 +80,8 @@
           requestAnimationFrame(update);
 
            // 箱を回転させる
-          //box.rotation.x += 0.01;
-          //box.rotation.y += 0.01;
+          box.rotation.x += 0.01;
+          box.rotation.y += 0.01;
           
           //平面を動かす
           plane.position.z += 0.02;
